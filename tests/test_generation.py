@@ -23,7 +23,7 @@ def initial_test_data_gen(num_samples):
     return real, imag
 
 if __name__ == "__main__":
-    num_samples = 1056
+    num_samples = 16384
     real, imag = initial_test_data_gen(num_samples);
 
     write_to_bin("test_recording.bin", num_samples, real, imag)

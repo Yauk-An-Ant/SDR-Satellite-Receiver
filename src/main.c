@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include "BinaryFileSource.h"
 
+#define CHUNK_SIZE 1024
+
 //test for milestone 1
 int file_test();
 
@@ -14,10 +16,20 @@ int file_test() {
         printf("Failed to open file source\n");
         return 1;
     }
+ 
+    float _Complex buffer[CHUNK_SIZE];
+    size_t total_samples_read = 0;
+    size_t chunks_processed = 0;
+    size_t samples_read = 0;
 
-    float _Complex buffer[1056];
-    size_t read_count = isource->read(isource, buffer, 1056);
-    printf("Successfully read %zu samples from file.\n", read_count);
+    while((samples_read = isource->read(isource, buffer, CHUNK_SIZE)) > 0) {
+        chunks_processed++;
+        total_samples_read += samples_read;
+
+        printf("Chunk %zu: Read %zu samples, Total samples: %zu\n", chunks_processed, samples_read, total_samples_read);
+    }
+
+    printf("Successfully read %zu samples from %zu chunks in file.\n", total_samples_read, chunks_processed);
     isource->destroy(isource);
     return 0;
 }
