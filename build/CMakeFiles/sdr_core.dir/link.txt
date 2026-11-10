@@ -1,0 +1,2 @@
+/usr/bin/ar qc libsdr_core.a CMakeFiles/sdr_core.dir/src/BinaryFileSource.c.o
+/usr/bin/ranlib libsdr_core.a

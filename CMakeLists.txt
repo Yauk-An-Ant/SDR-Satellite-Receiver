@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.15)
-project(SDRSatelliteReceiver VERSION 1.0.0 LANGUAGES CXX)
+project(SDRSatelliteReceiver VERSION 1.0.0 LANGUAGES C)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 99)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
@@ -12,7 +12,7 @@ elseif(MSVC)
 endif()
 
 add_library(sdr_core
-    src/BinaryFileSource.cpp
+    src/BinaryFileSource.c
 )
 
 target_include_directories(sdr_core PUBLIC
@@ -20,5 +20,5 @@ target_include_directories(sdr_core PUBLIC
     $<INSTALL_INTERFACE:include>
 )
 
-add_executable(sdr_app src/main.cpp)
-target_link_libraries(sdr_app PRIVATE sdr_core)
+add_executable(sdr_app src/main.c)
+target_link_libraries(sdr_app PRIVATE sdr_core m)

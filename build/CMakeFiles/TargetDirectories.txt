@@ -1,0 +1,4 @@
+/home/achary/achary/Projects/SDR-Satellite-Receiver/build/CMakeFiles/sdr_core.dir
+/home/achary/achary/Projects/SDR-Satellite-Receiver/build/CMakeFiles/sdr_app.dir
+/home/achary/achary/Projects/SDR-Satellite-Receiver/build/CMakeFiles/edit_cache.dir
+/home/achary/achary/Projects/SDR-Satellite-Receiver/build/CMakeFiles/rebuild_cache.dir

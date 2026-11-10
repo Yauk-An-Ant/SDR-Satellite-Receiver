@@ -8,7 +8,7 @@
 typedef struct ISource ISource;
 
 struct ISource {
-    size_t (*read)(ISource* self, float _Complex buffer, size_t num_samples);
+    size_t (*read)(ISource* self, float _Complex *buffer, size_t num_samples);
     void (*destroy)(ISource* self);
 };
 
